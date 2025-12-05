@@ -60,9 +60,37 @@ Nota: Verifiqueu que el fitxer de logs s'hagi creat.
 """
 import logging
 
-def count_letters(names):
-    #Write your code here
-    pass
+def expected_count_letters():
+    return{
+        "J": 1, 
+        "u": 1, 
+        "a": 3, 
+        "n": 1, 
+        "P": 1, 
+        "e": 1, 
+        "d": 1, 
+        "r": 2, 
+        "o": 1, 
+        "M": 1,
+        "t": 1,
+    }
+
+
+def test_count_letters(names, expected_letters_count):
+    letters_counts = count_letters
+    assert letter_counts = expected_letter_counts, "Incorrect letter counts"
+
+
+def test_log_created(names):
+    create_log(names)
+    assert os.path.exists("production.log"), "Log file not created"
+    
+
+def test_log_written(names, expected_letter_counts):
+    create_log_names 
+    with open("production.log", "r" as f:
+        lines = f.readlines()
+        assert any(f"Letter_count: expected_letter_counts" in line for line in lines), "Incorrect letter counts written to log"
 
 
 def create_log(names):
