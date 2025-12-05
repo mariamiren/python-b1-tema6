@@ -70,8 +70,19 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 nltk.download("vader_lexicon")
 
 def sentiment_analysis(text):
-    #Write your code here
-    pass
+    
+    text = "I love going to the beach on a sunny day, but I hate getting sunburned."
+    assert sentiment_analysis(text) == "Negative", "sentiment_analysis does not match with the imput text , which was " + text
+    
+    text = "I love going to the beach on a sunny day"
+    assert sentiment_analysis(text) == "Positive", "sentiment_analysis does not match with the imput text , which was " + text
+
+    text = "Is oak going to the beach on a sunny day"
+    assert sentiment_analysis(text) == "Positive", "sentiment_analysis does not match with the imput text , which was " + text
+
+    text = "I dont know if it is good go the beach on a sunny day"
+    assert sentiment_analysis(text) == "Neutral", "sentiment_analysis does not match with the imput text , which was " + text
+
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
