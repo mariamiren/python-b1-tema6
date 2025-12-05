@@ -73,16 +73,54 @@ Exemple:
          4
 
 """
+from ej6c2.py import read_txt_file, words_counter
+import pathlist os
+
+def read_txt_file():
+  launch_path == pathlib.Path.cwd
+  path = "files" + os.esp + "ej6c2_data_engineer.txt"
+    if str(launch_path).split(os.sep)[-1].startwith("Python-b1"):
+        path = "6c" + os.sep + path
+  
+  expected_output_25_characters = "Where is the last exercise"
+  assert(
+  read_txt_file(path)[:25] == expected_output_25_characters
+), "The text does not match it should be start whith 'What is a data engineer a'"
+  expected_output_25_characters 
+  
+  expected_output_last_25_characters = "nish and ready to send"
+  assert(  
+  read_txt_file(path)[:-25] == expected_output_last_25_characters
+), "The text does not match it should be finish with 'nish and ready to send'"
+  expected_output_last_25_characters 
 
 
-def read_txt_file(path: str) -> str:
-    #Write your code here
-    pass
+def words_counter():
+    
+  text = "The lazy dog start running "
+  word = "The"
+  expected_output = 2
+  assert (
+  words_counter(text, word) ==expected_output
+), "The counter does not match. It should be 2 for the world 'the'"
 
+  text = "The Data engineer is so dificult to study"
+  word = "poo"
+  expected_output = 0
+  assert(
+  words_counter(text, word) ==expected_output
+), "The counter does not match. It should be 0 for the world 'poo'"
 
-def words_counter(text: str, word: str) -> int:
-    #Write your code here
-    pass
+  text = "The lazy dog start running "
+  word = "Dog"
+  expected_output = 1
+  assert(
+  words_counter(text, word) ==expected_output
+), "The counter does not match. It should be 1 for the world 'Dog'"
+      
+
+    
+
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
