@@ -19,6 +19,7 @@ Ejemplo:
         numbers = [2, 3, 4, 5, 6]
     Salida:
         4.0
+        
 
 
 Enunciat:
@@ -58,8 +59,36 @@ def average_of_even_numbers(numbers):
         count += 1
     return total
 
+import pytest
+from ej6b2.py import average_for_even_numbers
 
-# Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
+
+def test_average_for_even_numbers_for_positive_numbers():
+    numbers = [2, 3, 4, 5, 6]
+    assert average_for_even_numbers(numbers) == 4.0, "average_for_even_numbers should be 4 for input [2, 3, 4, 5, 6]"
+
+
+def test_average_for_even_numbers_for_negative_numbers():  
+    numbers = [-2, -3, -4, -5, -6]
+    assert average_for_even_numbers(numbers) == -4.0, "average_for_even_numbers should be -4 for imput [-2, -3, -4, -5, -6]"
+
+
+def test_average_for_even_numbers_for_empty_list():  
+    numbers = []
+    assert average_for_even_numbers(numbers) == 0.0, "average_for_even_numbers should be 0 for imput []"
+
+
+def test_average_for_even_numbers_with_a_float():  
+    numbers = [2.0, 3.0, 4.0, 5.0, 6.0]
+    assert average_for_even_numbers(numbers) == 4.0, "average_for_even_numbers should be 4 for imput [2.0, 3.0, 4.0, 5.0, 6.0]"
+
+
+def test_average_for_even_numbers_with_no_even_numbers():  
+    numbers = [1, 3, 4, 5, 7]
+    assert average_for_even_numbers(numbers) == 0.0, "average_for_even_numbers should be 0.0 for imput [1, 3, 4, 5, 7]"
+  
+    
+    # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
 # numbers = [2, 3, 4, 5, 6]
