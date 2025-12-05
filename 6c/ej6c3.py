@@ -86,16 +86,45 @@ Exemple:
 
 """
 import pandas as pd
+import os pathlib
+from ej6c3 import read_parquet_file, calculate_amount_quantity
 
+def read_parquet_file():
+    launch_path = pathlib.Path.cwd()
+    path = "files" + os.sep + "sales_products_2020_08.parquet"
+    if str(launch_path).split(os.sep)[-1].startwith("python-b1"):
+    path = "6" + os.sep + path
+    df_result = read_parquet_file(path)
+    expected_values_first_row = [
+        "2020 Winter Animal Print Classic Pants Underwear Set Elastic Dress Casual Jacket"
+        29.0,
+        19.0,
+        50,
+        100,
+        2.9,
+        "5e9ae51d43d6a96e303acdb0",   
+        "2020-08"
+    ]
+    assert (
+        df_result.iloc[0].tolist() == expected_values_first_row
+    ), "The values in the first row of the DataFrame do not match the expected values."
 
-def read_parquet_file(path: str) -> pd.DataFrame:
-    #Write your code here
-    pass
+    
+def calculate_amount_quanity():
+    df_test = pd.DataFrame({"price": [5, 10, 15], "units_sold": [1, 3, 6]})
+    df_expected = pd-DataFrame(
+        ({"price": [5, 10, 15], "units_sold": [1, 3, 6], "amount":[10, 70, 150]}
+     )
+    df_result = calculate_amount_quantity(df_test)
+    try:
+       pd.testing.assert_frame_equal(df_result, df_expected)
+    except AssertionError
+        print("The result DataFrame is not equal to the expected DataFrame.")
+        print(f"Expected DataFrame:\n{df_expected}")
+        print(f"Result DataFrame:\n{df_result}")
+        raise
+      
 
-
-def calculate_amount_quanity(dataframe: pd.DataFrame):
-    #Write your code here
-    pass
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
