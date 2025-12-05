@@ -59,26 +59,21 @@ Exemple:
 
 """
 
-
+import pytest
 from typing import List
-
-
-def isprime(num):
-    #Find the error and rewrite the correct code. 
-    if num < 1:
-        return False
-    for i in range(2, num):
-        if num % i != 0:
-            return False
-    return True
-
+from ej6b3.py import check_prime
+@pytest.mark.parametrize(
+    "num, expected",
+[
+    ([1, 2, 3, 4, 5])[False, True, True, False, True]),
+    ([0, 1, 2, 3, 4, 5],[False, False, True, True, False]),
+    ([1], [False]),
 
 def check_primes(nums: List[int]) -> List[bool]:
-    #Find the error and rewrite the correct code. 
-    results = []
-    for i in range(1, len(nums)):
-        results.append(isprime(i))
-    return results
+    assert check_primes(nums) == expected, "The check_primes function does not return the expected list"
+    
+  
+    
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
